@@ -1,0 +1,50 @@
+
+create table employee (
+  id integer primary key not null,
+  name varchar(255) not null,
+  surname varchar(255) not null,
+  address varchar(255) not null,
+  email varchar(255) not null,
+  oib varchar(15) not null,
+  phoneNumber varchar(255) not null,
+  employed varchar(255) not null, --UNIX timestamp
+  salary integer not null,
+  warehouseId integer not null
+  
+);
+
+create table login (
+  id integer primary key not null,
+  employeeId integer not null,
+  password varchar(30) not null, -- SHA256 salted
+  email varchar(256) not null, -- SHA256 salted, regex
+  accessLevel integer not null
+
+);
+
+create table warehouse (
+  id integer primary key not null,
+  name varchar(255) not null,
+  address varchar(255) not null,
+  functional tinyint not null -- 0/1
+  
+);
+
+create table item (
+  id integer primary key not null,
+  name varchar(255) not null,
+  quantity integer not null,
+  weight integer not null, -- in kg, per unit
+  minOrder integer not null,
+  warehouseId integer not null
+  
+);
+
+create table parcel (
+  id integer primary key not null,
+  itemId integer not null,
+  warehouseId integer not null,
+  quantity integer not null,
+  parcelWeight integer not null,
+  delivered tinyint not null -- 0/1
+);
