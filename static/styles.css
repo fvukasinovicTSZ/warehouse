@@ -1,39 +1,101 @@
+/* styles.css */
+
+/* Reset some default styles */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-}
-
-h1 {
+    background-color: #e9ecef; /* Light gray background */
     color: #333;
+    line-height: 1.6;
+    padding: 20px; /* Add padding to the body */
 }
 
+/* Navbar styling */
+.navbar {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: #fff;
+    padding: 10px 0;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start; /* Align menu items to the left */
+    padding-left: 20px; /* Add padding to the left */
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.menu a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    border-radius: 5px;
+}
+
+/* Heading styling */
+h1 {
+    text-align: left; /* Align heading to the left */
+    margin: 20px 0;
+    color: #343a40; /* Darker text color */
+}
+
+/* Form styling */
 form {
+    max-width: 400px;
+    margin: 20px 0; /* Margin on top and bottom */
     background: #fff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #495057; /* Darker label color */
 }
 
 input[type="text"],
-input[type="email"] {
+input[type="email"],
+input[type="submit"] {
     width: 100%;
     padding: 10px;
-    margin: 5px 0 20px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da; /* Light border color */
+    border-radius: 5px;
 }
 
 input[type="submit"] {
-    background-color: #5cb85c;
-    color: white;
+    background-color: #28a745; /* Green background for submit button */
+    color: #fff;
     border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
     cursor: pointer;
 }
 
 input[type="submit"]:hover {
-    background-color: #4cae4c;
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Submitted information styling */
+h2 {
+    text-align: left; /* Align heading to the left */
+    margin-top: 20px;
+    color: #343a40; /* Darker text color */
+}
+
+p {
+    text-align: left; /* Align paragraphs to the left */
+    margin-left: 20px; /* Add left margin for paragraphs */
 }

@@ -6,12 +6,10 @@ app = Flask(__name__)
 def index():
     user_info = {}
     if request.method == 'POST':
-        # Use .get() to avoid KeyError if the key doesn't exist
         first_name = request.form.get('first_name')
         last_name = request.form.get('last_name')
         email = request.form.get('email')
 
-        # Check if all fields are filled
         if first_name and last_name and email:
             user_info = {
                 'first_name': first_name,
