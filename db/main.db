@@ -26,7 +26,7 @@ create table warehouse (
   id integer primary key not null,
   name varchar(255) not null,
   address varchar(255) not null,
-  functional tinyint not null -- 0/1
+  functional tinyint not null -- 0/1,
   
 );
 
@@ -36,7 +36,8 @@ create table item (
   quantity integer not null,
   weight integer not null, -- in kg, per unit
   minOrder integer not null,
-  warehouseId integer not null
+  warehouseId integer not null,
+  price int not null
   
 );
 
@@ -48,3 +49,85 @@ create table parcel (
   parcelWeight integer not null,
   delivered tinyint not null -- 0/1
 );
+
+
+INSERT INTO employee (id, name, surname, address, email, oib, phoneNumber, employed, salary, warehouseId) VALUES
+(1, 'Ivan', 'Horvat', 'Trg bana Josipa Jelačića 1, Zagreb', 'ivan.horvat@gmail.com', '12345678901', '091-234-5678', '1609459200', 12000, 1),
+(2, 'Ana', 'Kovač', 'Ulica kralja Tomislava 5, Split', 'ana.kovac@yahoo.com', '23456789012', '098-765-4321', '1612137600', 13000, 2),
+(3, 'Marko', 'Novak', 'Obala kralja Tomislava 10, Rijeka', 'marko.novak@hotmail.com', '34567890123', '095-123-4567', '1614556800', 14000, 1),
+(4, 'Petra', 'Babić', 'Zagrebačka 15, Osijek', 'petra.babic@yandex.com', '45678901234', '092-345-6789', '1617235200', 12500, 3),
+(5, 'Luka', 'Matić', 'Istarska 20, Pula', 'luka.matic@gmail.com', '56789012345', '091-987-6543', '1619827200', 13500, 2),
+(6, 'Marija', 'Jurić', 'Vukovarska 25, Slavonski Brod', 'marija.juric@yahoo.com', '67890123456', '098-654-3210', '1622505600', 14500, 1),
+(7, 'Toni', 'Savić', 'Kneza Branimira 30, Zadar', 'toni.savic@hotmail.com', '78901234567', '095-456-7890', '1625097600', 15000, 3),
+(8, 'Katarina', 'Pavlović', 'Ulica bana Jelačića 35, Varaždin', 'katarina.pavlovic@yandex.com', '89012345678', '091-321-0987', '1627776000', 15500, 2),
+(9, 'Dino', 'Grgić', 'Trg sv. Marka 40, Dubrovnik', 'dino.grgic@gmail.com', '90123456789', '098-123-4567', '1630454400', 16000, 1),
+(10, 'Nina', 'Križan', 'Ulica 1. svibnja 45, Šibenik', 'nina.krizan@yahoo.com', '01234567890', '095-789-0123', '1633046400', 16500, 3),
+(11, 'Filip', 'Vuković', 'Zagrebačka 50, Karlovac', 'filip.vukovic@hotmail.com', '12345678901', '091-654-3210', '1635724800', 17000, 2),
+(12, 'Maja', 'Tomić', 'Ulica dr. Franje Tuđmana 55, Sisak', 'maja.tomic@yandex.com', '23456789012', '098-321-6540', '1638316800', 17500, 1),
+(13, 'Andrej', 'Kovačević', 'Trg hrvatskih velikana 60, Bjelovar', 'andrej.kovacevic@gmail.com', '34567890123', '095-987-6543', '1640995200', 18000, 3),
+(14, 'Sara', 'Pavić', 'Ulica kralja Zvonimira 65, Koprivnica', 'sara.pavic@yahoo.com', '45678901234', '091-234-5670', '1643673600', 18500, 2),
+(15, 'Tomislav', 'Rogić', 'Trg sv. Petra 70, Slavonski Brod', 'tomislav.rogic@hotmail.com', '56789012345', '098-765-4321', '1646092800', 19000, 1);
+
+
+INSERT INTO login (id, employeeId, email, accessLevel) VALUES
+(1, 1, "ee4ea0fe2a0e32639bfd7ab68c3a7902dd53705d52109505802d37c52faee498", 'ivan.horvat@gmail.com', 1),
+(2, 2, "5b34b94b5db1b7ffe1d265ae36074b914b48dc6e458d2c3a1a944464a07e8cd1", 'ana.kovac@yahoo.com', 1),
+(3, 3, "38f9c6b98fad3eec6cb1c582854b5873afe948809652ea93b46faac2489297d0", 'marko.novak@hotmail.com', 1),
+(4, 4, "c9bffd0e4bfe13a45181c654bd8bfdbf77b1a7c0327932633ea995232012328c", 'petra.babic@yandex.com', 1),
+(5, 5, "f722c30790807925c987fae52276aed993e1eb7d290cfc3c33776b4acfa96ecf", 'luka.matic@gmail.com', 1),
+(6, 6, "500e26c585ee04712c845eb7cf409e6cd2cf166e1fd74e6d518cec7b18e13611", 'marija.juric@yahoo.com', 1),
+(7, 7, "67189e12a87376008cde0455cc29b0de83584088afde5f1bc3b69d8ccc007648", 'toni.savic@hotmail.com', 1),
+(8, 8, "79fdd8d42638805ca4174e14b71cf2b1c76c25fad7b2fa3a6b7e56fd5d7b1805", 'katarina.pavlovic@yandex.com', 1),
+(9, 9, "8e3317db6e5c9c635c3ea806d2a8a3dba8a44bd481086ce4686fd8625118dd8d", 'dino.grgic@gmail.com', 1),
+(10, 10, "dce6fe20d158a9df8f795ec3491c55190a3ddf7201f91b534fd756502002efef", 'nina.krizan@yahoo.com', 1),
+(11, 11, "bc01eb3820522c9bafe21cec6bbcae2bb705b2c6e62cc2c76748ea783156dbbd", 'filip.vukovic@hotmail.com', 1),
+(12, 12, "f55384ae5912b31f041c31f3a67b9bcececb8bdc6d338f37cdbda40e45ffdb7e", 'maja.tomic@yandex.com', 1),
+(13, 13, "34977f8bcbf18ab365c90a6141dcdfdeab0df0ec7d9f88695070a395d07083ff", 'andrej.kovacevic@gmail.com', 1),
+(14, 14, "80cb761daef8575a19742ff29b7e63899bd21f1de2da17f5ad9e7920b73e1449", 'sara.pavic@yahoo.com', 1),
+(15, 15, "5eeb1f140ac36030d4b8ca57454d408fcf569523e871a81a5908c4b036ce5d49", 'tomislav.rogic@hotmail.com', 1);
+
+
+INSERT INTO warehouse (id, name, address, functional) VALUES
+(1, "zagreb-glavna", "Ivanova Ulica 12, 10000 Zagreb", 1),
+(2, "split-glavna", "Marijina Cesta 45, 21000 Split, Croatia", 1),
+(3, "sibenik-glavna", "Kralja Tomislava 78, 22000 Šibenik", 0)
+
+
+INSERT INTO item (id, name, quantity, weight, minOrder, warehouseId, price) VALUES
+(1, 'Organski badem', 300, 0.1, 10, 1, 4.9),
+(2, 'Pamukasta majica', 150, 0.2, 20, 2, 7.35),
+(3, 'A4 papir za kopiranje', 80, 2, 5, 3, 1.96),
+(4, 'Tamna čokolada', 200, 0.1, 15, 1, 0.98),
+(5, 'Trkaća tenisica', 50, 0.5, 5, 2, 19.6),
+(6, 'Zeleni čaj', 400, 0.05, 15, 1, 3.5),
+(7, 'Kava u zrnu', 250, 0.2, 10, 1, 8.4),
+(8, 'Pamučne čarape', 300, 0.1, 20, 2, 4.2),
+(9, 'Bilje za začin', 150, 0.05, 15, 1, 2.1),
+(10, 'Papirnate maramice', 500, 0.01, 5, 3, 0.7),
+(11, 'Pasta za zube', 100, 0.1, 5, 2, 2.8),
+(12, 'Šampon', 80, 0.3, 5, 2, 10.5),
+(13, 'Krema za ruke', 60, 0.2, 5, 2, 7),
+(14, 'Pencil', 400, 0.02, 10, 3, 0.35),
+(15, 'Marker', 300, 0.03, 10, 3, 0.7),
+(16, 'Bilježnica', 200, 0.5, 5, 3, 1.4),
+(17, 'Laptop torba', 50, 1.0, 5, 2, 24.5),
+(18, 'Ruksak', 40, 0.8, 5, 2, 21),
+(19, 'Knjiga', 100, 0.5, 5, 3, 5.6),
+(20, 'Slušalice', 70, 0.2, 5, 2, 14),
+(21, 'USB flash drive', 150, 0.02, 5, 3, 10.5),
+(22, 'Toner za pisač', 30, 1.0, 5, 3, 35),
+(23, 'Kolačići', 250, 0.1, 15, 1, 1.4),
+(24, 'Voćni sok', 100, 1.0, 5, 1, 2.1),
+(25, 'Pikado', 20, 0.5, 5, 2, 17.5),
+(26, 'Kupaći kostim', 60, 0.3, 5, 2, 10.5),
+(27, 'Suncobran', 30, 1.5, 5, 2, 28),
+(28, 'Biciklistička kaciga', 25, 0.5, 5, 2, 14),
+(29, 'Tenisice za trčanje', 40, 0.5, 5, 2, 24.5),
+(30, 'Kapa', 100, 0.1, 10, 2, 5.6);
+
+
+INSERT INTO parcel (id, itemId, warehouseId, quantity, parcelWeight, delivered) VALUES
+(1, 1, 1, 10, 4, 1),  -- 10 units of Organski badem from warehouse 1, total weight 4kg
+(2, 2, 2, 20, 4, 1),  -- 20 units of Pamukasta majica from warehouse 2, total weight 4kg
+(3, 4, 1, 15, 6, 1),  -- 15 units of Tamna čokolada from warehouse 1, total weight 6kg
+(4, 5, 2, 5, 10, 1);   -- 5 units of Trkaća tenisica from warehouse 2, total weight 10kg
