@@ -15,34 +15,6 @@ body {
     padding: 20px; /* Add padding to the body */
 }
 
-/* Navbar styling */
-.navbar {
-    background-color: #007bff; /* Bootstrap primary color */
-    color: #fff;
-    padding: 10px 0;
-}
-
-.menu {
-    list-style: none;
-    display: flex;
-    justify-content: flex-start; /* Align menu items to the left */
-    padding-left: 20px; /* Add padding to the left */
-}
-
-.menu li {
-    margin: 0 15px;
-}
-
-.menu a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 10px;
-}
-
-.menu a:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    border-radius: 5px;
-}
 
 /* Heading styling */
 h1 {
@@ -99,3 +71,105 @@ p {
     text-align: left; /* Align paragraphs to the left */
     margin-left: 20px; /* Add left margin for paragraphs */
 }
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Navigation */
+  .top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  .nav-container {
+    /* Remove max-width and center alignment */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0 20px; /* optional spacing from the left */
+  }
+  
+  .nav-links li {
+    position: relative;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #007BFF;
+  }
+  
+  /* Submenu styles */
+  .has-submenu:hover .submenu {
+    display: block;
+  }
+  
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 999;
+  }
+  
+  .submenu li {
+    width: 100%;
+  }
+  
+  .submenu li a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  
+  .submenu li a:hover {
+    background-color: #f0f0f0;
+    color: #007BFF;
+  }
+  
+  /* Spacer */
+  .nav-spacer {
+    height: 60px;
+  }
+  
+  /* Page Content */
+  .content {
+    padding: 20px;
+  }
+  

@@ -7,14 +7,27 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <nav class="navbar">
-        <ul class="menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+
+    <nav class="top-nav">
+        <div class="nav-container">
+          <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="has-submenu">
+              <a href="services.html">Add</a>
+              <ul class="submenu">
+                <li><a href="/services/lorem">Add</a></li>
+                <li><a href="/services/ipsum">Add</a></li>
+                <li><a href="/services/lorem">Add</a></li>
+              </ul>
+            </li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>      
+    
+      <!-- Spacer -->
+      <div class="nav-spacer"></div>
 
     <h1>User Information Form</h1>
     <form method="POST">
