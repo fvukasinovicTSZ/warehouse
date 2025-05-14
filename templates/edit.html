@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Add entry</title>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="nav-container">
+          <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="Add.html">Add entry</a></li>
+            <li><a href="Edit.html">Edit entry</a></li>
+            <li class="has-submenu">
+              <a href="services.html">Add</a>
+              <ul class="submenu">
+                <li><a href="/services/lorem">Add</a></li>
+                <li><a href="/services/ipsum">Add</a></li>
+                <li><a href="/services/lorem">Add</a></li>
+              </ul>
+            </li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>      
+    
+      <!-- Spacer -->
+      <div class="nav-spacer"></div>
+
+    <h1>Edit entry by ID</h1>
+    <form method="POST">
+        <label for="id">ID>: </label>
+        <input type="text" id="id" name="id">
+    </form>
+
+    <h1>Edit values</h1>
+    <form method="POST">
+        <label for="item_name">Item Name:</label>
+        <input type="text" id="item_name" name="item_name"><br>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity"><br>
+
+        <label for="weight">Weight:</label>
+        <input type="number" step="any" id="weight" name="weight"><br>
+
+        <label for="price">Price:</label>
+        <input type="number" step="any" id="price" name="price"><br>
+
+        <label for="min_order">Minimum Order:</label>
+        <input type="number" id="min_order" name="min_order"><br>
+        <button type="submit">Update Entry</button>
+    </form>
+
+    {% if user_info %}
+        <h2>Submitted Information:</h2>
+        <p>Item Name: {{ user_info.item_name }}</p>
+        <p>Quantity: {{ user_info.quantity }}</p>
+        <p>Weight: {{ user_info.weight }}</p>
+        <p>Price: {{ user_info.price }}</p>
+        <p>Minimum Order: {{ user_info.min_order }}</p>
+    {% endif %}
+
+    {% if sqlUpdate %}
+        <h2>SQL Entry:</h2>
+        <p>{{ sqlUpdate }}</p>
+    {% endif %}
+
+
+</body>
+</html>
